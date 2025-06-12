@@ -1,6 +1,11 @@
 @import "bootstrap";
 
 $gray-color: #777;
+$dark-bg: #333;
+$white-color: #fff;
+$gray-hover-bg: #555;
+$footer-border-color: #eaeaea;
+$footer-link-hover-color: #222;
 
 .navbar {
   position: fixed;
@@ -8,7 +13,7 @@ $gray-color: #777;
   left: 0;
   right: 0;
   width: 100%;
-  background-color: #333;
+  background-color: $dark-bg;
   border: none;
   border-radius: 0;
   min-height: auto;
@@ -41,15 +46,15 @@ $gray-color: #777;
 }
 
 .navbar-nav li a {
-  color: #fff;
+  color: $white-color;
   text-decoration: none;
   padding: 8px 15px;
   display: inline-block;
 }
 
 .navbar-nav li a:hover {
-  background-color: #555;
-  color: #fff;
+  background-color: $gray-hover-bg;
+  color: $white-color;
   text-decoration: none;
 }
 
@@ -57,7 +62,7 @@ $gray-color: #777;
   float: none;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: $white-color;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 5px;
@@ -66,7 +71,7 @@ $gray-color: #777;
 }
 
 #logo:hover {
-  color: #fff;
+  color: $white-color;
   text-decoration: none;
 }
 
@@ -112,7 +117,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #777;
+  color: $gray-color;
 }
 
 p {
@@ -128,16 +133,16 @@ img {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid $footer-border-color;
   color: $gray-color;
 }
 
 footer a {
-  color: #555;
+  color: $gray-hover-bg;
 }
 
 footer a:hover {
-  color: #222;
+  color: $footer-link-hover-color;
 }
 
 footer small {
