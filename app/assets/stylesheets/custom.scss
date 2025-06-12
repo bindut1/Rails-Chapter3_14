@@ -5,7 +5,9 @@ $dark-bg: #333;
 $white-color: #fff;
 $gray-hover-bg: #555;
 $footer-border-color: #eaeaea;
+$gray-form: #bbb;
 $footer-link-hover-color: #222;
+$red-color: rgb(243, 12, 12);
 
 .navbar {
   position: fixed;
@@ -54,23 +56,6 @@ $footer-link-hover-color: #222;
 
 .navbar-nav li a:hover {
   background-color: $gray-hover-bg;
-  color: $white-color;
-  text-decoration: none;
-}
-
-#logo {
-  float: none;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: $white-color;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 5px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-#logo:hover {
   color: $white-color;
   text-decoration: none;
 }
@@ -125,10 +110,22 @@ p {
   line-height: 1.7em;
 }
 
-img {
-  display: none;
+#logo {
+  float: none;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: $white-color;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 5px;
+  font-weight: bold;
+  text-decoration: none;
 }
 
+#logo:hover {
+  color: $white-color;
+  text-decoration: none;
+}
 
 footer {
   margin-top: 45px;
@@ -157,4 +154,96 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 15px;
+}
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* sidebar */
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+/* forms */
+input,
+textarea,
+select,
+.uneditable-input {
+  border: 1px solid $gray-form;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#error_explanation {
+  color: $red-color;
+
+  ul {
+    color: $red-color;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .is-invalid;
+
+  .form-control {
+    color: $gray-color;
+  }
 }
