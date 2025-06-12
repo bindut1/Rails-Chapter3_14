@@ -4,9 +4,6 @@ $gray-color: #777;
 $dark-bg: #333;
 $white-color: #fff;
 $gray-hover-bg: #555;
-$footer-border-color: #eaeaea;
-$gray-form: #bbb;
-$footer-link-hover-color: #222;
 $red-color: rgb(243, 12, 12);
 
 .navbar {
@@ -21,6 +18,7 @@ $red-color: rgb(243, 12, 12);
   min-height: auto;
   padding: 8px 0;
   z-index: 1000;
+  overflow: visible;
 }
 
 .navbar .container {
@@ -30,6 +28,7 @@ $red-color: rgb(243, 12, 12);
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+  position: relative;
 }
 
 .navbar-nav {
@@ -45,6 +44,7 @@ $red-color: rgb(243, 12, 12);
   margin-left: 20px;
   float: none;
   display: inline-block;
+  position: relative;
 }
 
 .navbar-nav li a {
@@ -58,6 +58,10 @@ $red-color: rgb(243, 12, 12);
   background-color: $gray-hover-bg;
   color: $white-color;
   text-decoration: none;
+}
+
+.navbar-nav li.dropdown>a.dropdown-toggle {
+  position: relative;
 }
 
 body {
@@ -135,7 +139,7 @@ img {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $footer-border-color;
+  border-top: 1px solid #eaeaea;
   color: $gray-color;
 }
 
@@ -144,7 +148,7 @@ footer a {
 }
 
 footer a:hover {
-  color: $footer-link-hover-color;
+  color: #222;
 }
 
 footer small {
@@ -220,7 +224,7 @@ input,
 textarea,
 select,
 .uneditable-input {
-  border: 1px solid $gray-form;
+  border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
@@ -251,4 +255,54 @@ input {
   .form-control {
     color: $gray-color;
   }
+}
+
+.dropdown-menu {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  background-color: $white-color;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 0 !important;
+  list-style: none;
+  z-index: 1050;
+  display: none;
+  transform: none !important;
+}
+
+.dropdown.show .dropdown-menu {
+  display: block !important;
+}
+
+.dropdown-menu li {
+  margin: 0;
+  float: none;
+  display: block;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: $dark-bg;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f5f5f5;
+  color: #262626;
+  text-decoration: none;
+}
+
+.dropdown-menu .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
 }
