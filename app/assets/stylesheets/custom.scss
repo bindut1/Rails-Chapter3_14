@@ -2,8 +2,60 @@
 
 $gray-color: #777;
 
+/* Header styles - load sau Bootstrap để có độ ưu tiên cao hơn */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #333;
+  border: none;
+  border-radius: 0;
+  min-height: auto;
+  padding: 8px 0;
+  z-index: 1000;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: none;
+}
+
+.navbar-nav li {
+  margin-left: 20px;
+  float: none;
+  display: inline-block;
+}
+
+.navbar-nav li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 15px;
+  display: inline-block;
+}
+
+.navbar-nav li a:hover {
+  background-color: #555;
+  color: #fff;
+  text-decoration: none;
+}
+
 body {
-  padding-top: 60px;
+  padding-top: 120px;
 }
 
 section {
@@ -53,18 +105,19 @@ p {
 }
 
 #logo {
-  float: left;
+  float: none;
   margin-right: 10px;
   font-size: 1.7em;
-  // color: #fff;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 5px;
   font-weight: bold;
+  text-decoration: none;
 }
 
 #logo:hover {
-  // color: #fff;
+  color: #fff;
   text-decoration: none;
 }
 
