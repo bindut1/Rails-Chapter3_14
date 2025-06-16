@@ -174,7 +174,6 @@ footer ul li {
   @include box_sizing;
 }
 
-/* sidebar */
 aside {
   section.user_info {
     margin-top: 20px;
@@ -214,7 +213,6 @@ aside {
   margin-top: 15px;
 }
 
-/* forms */
 input,
 textarea,
 select,
@@ -300,4 +298,19 @@ input {
   height: 1px;
   margin: 9px 0;
   overflow: hidden;
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
 }
