@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
-  def show
-    @user = User.find(params[:id])
-    # debugger
-  end
-
+  before_action :set_user, only: [ :show ]
   def new
     @user = User.new
   end
@@ -19,6 +15,10 @@ class UsersController < ApplicationController
       # unprocessable_entity is the status code for validation failed (422)
       render "new", status: :unprocessable_entity
     end
+  end
+
+  def set_user
+    @user = User.find_by(id: params[:id])
   end
 
   private
