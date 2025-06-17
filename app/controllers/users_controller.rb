@@ -16,7 +16,6 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       flash[:danger] = "Sign up error!!!"
-      # unprocessable_entity is the status code for validation failed (422)
       render "new", status: :unprocessable_entity
     end
   end
