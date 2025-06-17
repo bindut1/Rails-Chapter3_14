@@ -4,10 +4,8 @@ $gray-color: #777;
 $dark-bg: #333;
 $white-color: #fff;
 $gray-hover-bg: #555;
-$footer-border-color: #eaeaea;
-$gray-form: #bbb;
-$footer-link-hover-color: #222;
 $red-color: rgb(243, 12, 12);
+$gray-responsive: rgba(255, 255, 255, 0.1);
 
 .navbar {
   position: fixed;
@@ -21,6 +19,7 @@ $red-color: rgb(243, 12, 12);
   min-height: auto;
   padding: 8px 0;
   z-index: 1000;
+  overflow: visible;
 }
 
 .navbar .container {
@@ -30,6 +29,7 @@ $red-color: rgb(243, 12, 12);
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+  position: relative;
 }
 
 .navbar-nav {
@@ -45,6 +45,7 @@ $red-color: rgb(243, 12, 12);
   margin-left: 20px;
   float: none;
   display: inline-block;
+  position: relative;
 }
 
 .navbar-nav li a {
@@ -58,6 +59,10 @@ $red-color: rgb(243, 12, 12);
   background-color: $gray-hover-bg;
   color: $white-color;
   text-decoration: none;
+}
+
+.navbar-nav li.dropdown>a.dropdown-toggle {
+  position: relative;
 }
 
 body {
@@ -130,7 +135,7 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $footer-border-color;
+  border-top: 1px solid #eaeaea;
   color: $gray-color;
 }
 
@@ -139,7 +144,7 @@ footer a {
 }
 
 footer a:hover {
-  color: $footer-link-hover-color;
+  color: #222;
 }
 
 footer small {
@@ -170,7 +175,6 @@ footer ul li {
   @include box_sizing;
 }
 
-/* sidebar */
 aside {
   section.user_info {
     margin-top: 20px;
@@ -210,12 +214,11 @@ aside {
   margin-top: 15px;
 }
 
-/* forms */
 input,
 textarea,
 select,
 .uneditable-input {
-  border: 1px solid $gray-form;
+  border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
@@ -245,5 +248,144 @@ input {
 
   .form-control {
     color: $gray-color;
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: $white-color;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 0;
+  list-style: none;
+  z-index: 1050;
+  display: none;
+  transform: none;
+}
+
+.dropdown.show .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  margin: 0;
+  float: none;
+  display: block;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: $dark-bg;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f5f5f5;
+  color: #262626;
+  text-decoration: none;
+}
+
+.dropdown-menu .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+}
+
+.navbar-toggler {
+  display: none;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: $white-color;
+  cursor: pointer;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-collapse {
+    display: none;
+    width: 100%;
+    background-color: $dark-bg;
+    border-top: 1px solid $gray-responsive;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  .navbar-collapse.show {
+    display: block;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-nav li {
+    margin-left: 0;
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-nav li a {
+    display: block;
+    padding: 12px 15px;
+    border-bottom: 1px solid $gray-responsive;
+    width: 100%;
+  }
+
+  .navbar-nav li:last-child a {
+    border-bottom: none;
+  }
+
+  .navbar-nav .nav-item.dropdown .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: $gray-responsive;
+    border: none;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .navbar-nav .nav-item.dropdown .dropdown-menu li a {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 8px 30px;
+  }
+
+  .navbar-nav .nav-item.dropdown .dropdown-menu li a:hover {
+    background-color: $gray-responsive;
+    color: $white-color;
+  }
+
+  .navbar-nav .nav-item.dropdown .dropdown-menu .divider {
+    background-color: rgba(255, 255, 255, 0.2);
   }
 }

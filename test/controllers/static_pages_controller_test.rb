@@ -12,7 +12,6 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get help" do
-    # get lam_path
     get help_path
     assert_response :success
     assert_select "title", "Help | #{@base_title}"
