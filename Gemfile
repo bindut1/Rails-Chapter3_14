@@ -10,6 +10,10 @@ gem "faker", "3.2.0"
 gem "will_paginate", "3.3.1"
 gem "bootstrap-will_paginate", "1.0.0"
 
+gem "active_storage_validations", "1.1.4"
+gem "image_processing", "1.14.0"
+gem "mini_magick", "4.9.5"
+
 gem "propshaft"
 
 gem "mysql2", "~> 0.5"

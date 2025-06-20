@@ -1,5 +1,4 @@
 class PasswordResetsController < ApplicationController
-  STATUS_UNPROCESSABLE_ENTITY = :unprocessable_entity
   before_action :get_user, :valid_user, :check_expiration, only: [ :edit, :update ]
 
   def new
