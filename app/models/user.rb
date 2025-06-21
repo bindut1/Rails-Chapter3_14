@@ -61,6 +61,10 @@ class User < ApplicationRecord
     Micropost.where("user_id = ?", id)
   end
 
+  def can_be_activated?(token)
+    !activated? && authenticated?(:activation, token)
+  end
+
   private
     def downcase_email
       self.email = email.downcase
