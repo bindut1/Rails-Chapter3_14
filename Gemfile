@@ -6,6 +6,10 @@ gem "rails", "~> 8.0.2"
 
 gem "bcrypt", "3.1.13"
 
+gem "faker", "3.2.0"
+gem "will_paginate", "3.3.1"
+gem "bootstrap-will_paginate", "1.0.0"
+
 gem "propshaft"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", ">= 2.1"
