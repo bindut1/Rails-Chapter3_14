@@ -4,7 +4,7 @@ source "https://rubygems.org"
 gem "rails", "~> 8.0.2"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 
-gem "bcrypt", "3.1.13"
+gem "bcrypt", "3.1.20"
 
 gem "faker", "3.2.0"
 gem "will_paginate", "3.3.1"
