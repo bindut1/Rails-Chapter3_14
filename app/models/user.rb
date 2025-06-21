@@ -55,7 +55,7 @@ class User < ApplicationRecord
   def password_reset_expired?
     reset_sent_at < 1.minute.ago
   end
-  
+
   def can_be_activated?(token)
     !activated? && authenticated?(:activation, token)
   end
