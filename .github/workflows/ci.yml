@@ -10,6 +10,21 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RAILS_ENV: test
+      CI: true
+      DATABASE_USERNAME: root
+      DATABASE_PASSWORD: password
+      DATABASE_HOST: 127.0.0.1
+      DATABASE_PORT: 3306
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: sample_app_test
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
     - uses: actions/checkout@v4
@@ -18,6 +33,13 @@ jobs:
         ruby-version: .ruby-version
         bundler-cache: true
     - run: bundle install
+    - name: Wait for MySQL
+      run: |
+        while ! mysqladmin ping -h 127.0.0.1 -u root -ppassword --silent; do
+          echo 'Waiting for MySQL...'
+          sleep 1
+        done
+        echo 'MySQL is ready!'
     - run: bundle exec rubocop
     - run: bundle exec rails db:migrate
     - run: bundle exec rails db:test:prepare

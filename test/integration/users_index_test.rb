@@ -6,7 +6,7 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
     @non_admin = users(:archer)
   end
 
-  test "index including pagination" do
+  test "should display paginated users list for admin" do
     log_in_as(@admin)
     get users_path
     assert_template "users/index"
@@ -16,7 +16,7 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "index as admin including pagination and delete links" do
+  test "should show delete links and allow deletion as admin" do
     log_in_as(@admin)
     get users_path
     assert_template "users/index"
@@ -33,7 +33,7 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "index as non-admin" do
+  test "should not show delete links as non-admin" do
     log_in_as(@non_admin)
     get users_path
     assert_select "a", text: "delete", count: 0
