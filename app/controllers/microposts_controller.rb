@@ -6,7 +6,7 @@ class MicropostsController < ApplicationController
     @micropost = current_user.microposts.build(micropost_params)
     @micropost.image.attach(params[:micropost][:image])
     if @micropost.save
-      flash[:success] = "Micropost created!"
+      flash[:success] = t("microposts.create.success")
       redirect_to root_url
     else
       @feed_items = current_user.feed.paginate(page: params[:page])
@@ -16,7 +16,7 @@ class MicropostsController < ApplicationController
 
   def destroy
     @micropost.destroy
-    flash[:success] = "Micropost deleted"
+    flash[:success] = t("microposts.destroy.success")
     redirect_to request.referrer || root_url
   end
 
