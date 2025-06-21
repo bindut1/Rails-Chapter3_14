@@ -42,6 +42,10 @@ class User < ApplicationRecord
     UserMailer.account_activation(self).deliver_now
   end
 
+  def can_be_activated?(token)
+    !activated? && authenticated?(:activation, token)
+  end
+
   private
     def downcase_email
       self.email = email.downcase

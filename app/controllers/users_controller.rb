@@ -21,17 +21,17 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
-      flash[:info] = "Please check your email to activate your account."
+      flash[:info] = t("users.create.check_email")
       redirect_to root_url
     else
-      flash[:danger] = "Sign up error!!!"
+      flash[:danger] = t("users.create.signup_error")
       render "new", status: STATUS_UNPROCESSABLE_ENTITY
     end
   end
 
   def update
     if @user.update(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = t("users.update.profile_updated")
       redirect_to @user
     else
       render "edit", status: STATUS_UNPROCESSABLE_ENTITY
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
+    flash[:success] = t("users.destroy.user_deleted")
     redirect_to users_url
   end
 
@@ -56,7 +56,7 @@ class UsersController < ApplicationController
     def logged_in_user
       if !logged_in?
         store_location
-        flash[:danger] = "Please log in."
+        flash[:danger] = t("users.logged_in_user.please_log_in")
         redirect_to login_url
       end
     end
