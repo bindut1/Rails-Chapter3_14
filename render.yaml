@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: sample-app
+    runtime: ruby
+    region: singapore
+    buildCommand: "./render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    plan: starter
+    healthCheckPath: /up
+    envVars:
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: RAILS_ENV
+        value: production
+      - key: BUNDLE_WITHOUT
+        value: development:test
+      - key: WEB_CONCURRENCY
+        value: 2
+      - key: RAILS_MAX_THREADS
+        value: 5
+      - key: RAILS_SERVE_STATIC_FILES
+        value: true
+      - key: RAILS_LOG_TO_STDOUT
+        value: true
+      - key: DATABASE_USERNAME
+        sync: false
+      - key: DATABASE_PASSWORD
+        sync: false
+      - key: DATABASE_HOST
+        sync: false
+      - key: DATABASE_PORT
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: GMAIL_USERNAME
+        sync: false
+      - key: GMAIL_PASSWORD
+        sync: false
