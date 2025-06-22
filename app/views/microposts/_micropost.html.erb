@@ -4,7 +4,7 @@
   <span class="content">
     <%= micropost.content %>
     <% if micropost.image.attached? %>
-      <%= image_tag micropost.display_image if micropost.image.attached? %>
+      <%= image_tag micropost.image, style: "max-width: 500px; height: auto;" if micropost.image.attached? %>
     <% end %>
   </span>
   <span class="timestamp">
