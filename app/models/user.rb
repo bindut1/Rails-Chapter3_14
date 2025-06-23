@@ -62,9 +62,8 @@ class User < ApplicationRecord
   end
 
   def feed
-    following_ids = active_relationships.pluck(:followed_id)
-    all_user_ids = following_ids + [ id ]
-    Micropost.where(user_id: all_user_ids).includes(:user).order(created_at: :desc)
+    following_ids = "SELECT followed_id FROM relationships WHERE follower_id = :user_id"
+    Micropost.where("user_id IN (#{following_ids}) OR user_id = :user_id", user_id: id)
   end
 
   def follow(other_user)
