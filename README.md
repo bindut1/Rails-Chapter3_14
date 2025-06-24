@@ -5,14 +5,9 @@ A full-featured social media application built with Ruby on Rails, featuring use
 ## Features
 
 - **User Management**: User registration, login/logout, email activation, password reset
-- **Microposts**: Create, view, and delete short messages (140 characters max)
+- **Microposts**: Create, view, and delete short messages
 - **Image Uploads**: Attach images to microposts with validation and resizing
 - **Social Features**: Follow/unfollow other users, personalized feed
-- **Responsive Design**: Bootstrap-powered responsive UI
-- **Admin Panel**: Admin users can manage other users
-- **Email Integration**: Account activation and password reset emails
-- **Cloud Storage**: Cloudinary integration for image hosting
-- **Pagination**: Efficient pagination for users and microposts
 
 ## Technology Stack
 
@@ -64,8 +59,8 @@ A full-featured social media application built with Ruby on Rails, featuring use
    # Set up environment variables for development
    export DATABASE_USERNAME=your_mysql_username
    export DATABASE_PASSWORD=your_mysql_password
-   export DATABASE_HOST=localhost
-   export DATABASE_PORT=3306
+   export DATABASE_HOST=your_mysql_host
+   export DATABASE_PORT=your_mysql_port
    export GMAIL_USERNAME=your_gmail_username
    export GMAIL_PASSWORD=your_gmail_password
    export CLOUDINARY_CLOUD_NAME=your_cloudinary_name
@@ -88,9 +83,4 @@ Run the full test suite:
 # Run all tests
 rails t
 ```
-
-## Author
-
-**Lam**
-
 ---
