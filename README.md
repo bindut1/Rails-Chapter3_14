@@ -9,17 +9,6 @@ A full-featured social media application built with Ruby on Rails, featuring use
 - **Image Uploads**: Attach images to microposts with validation and resizing
 - **Social Features**: Follow/unfollow other users, personalized feed
 
-## Technology Stack
-
-- **Backend**: Ruby on Rails 8.0.2
-- **Database**: MySQL 8.0+
-- **Frontend**: Bootstrap 5.3, Stimulus, Turbo
-- **Authentication**: Custom implementation with bcrypt
-- **Image Processing**: ImageMagick, MiniMagick
-- **File Storage**: Cloudinary
-- **Testing**: Rails built-in testing framework
-- **Deployment**: Render
-
 ## Key Models
 
 - **User**: Handles user accounts, authentication, and relationships
