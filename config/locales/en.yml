@@ -9,8 +9,6 @@ en:
       profile_updated: "Profile updated"
     destroy:
       user_deleted: "User deleted"
-    logged_in_user:
-      please_log_in: "Please log in."
 
   account_activations:
     edit:
@@ -22,3 +20,25 @@ en:
       account_not_activated: "Account not activated. "
       check_email_for_activation: "Check your email for the activation link."
       invalid_email_password: "Invalid email/password combination"
+
+  password_resets:
+    create:
+      email_sent: "Email sent with password reset instructions"
+      email_not_found: "Email address not found"
+    update:
+      password_empty: "can't be empty"
+      password_reset_success: "Password has been reset."
+    valid_user:
+      account_not_activated: "Account not activated. Please activate your account before resetting your password."
+    check_expiration:
+      password_reset_expired: "Password reset has expired."
+
+  microposts:
+    create:
+      success: "Micropost created!"
+    destroy:
+      success: "Micropost deleted"
+
+  application:
+    logged_in_user:
+      please_log_in: "Please log in."
