@@ -12,7 +12,7 @@ gem "bootstrap-will_paginate", "1.0.0"
 
 gem "active_storage_validations", "1.1.4"
 gem "image_processing", "1.14.0"
-gem "mini_magick", "4.9.5"
+gem "mini_magick", "5.2.0"
 gem "cloudinary", "~> 1.25"
 
 gem "propshaft"
