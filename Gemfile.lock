@@ -183,7 +183,9 @@ GEM
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
     mime-types-data (3.2025.0617)
-    mini_magick (4.9.5)
+    mini_magick (5.2.0)
+      benchmark
+      logger
     mini_mime (1.1.5)
     minitest (5.25.5)
     msgpack (1.8.0)
@@ -414,7 +416,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal
-  mini_magick (= 4.9.5)
+  mini_magick (= 5.2.0)
   mysql2 (~> 0.5)
   propshaft
   puma (>= 5.0)
